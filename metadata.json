@@ -1,0 +1,6 @@
+{
+  "name": "Atlas Visual de los Aceites Esenciales",
+  "description": "Atlas Visual de los Aceites Esenciales: 300 protocolos visuales, diluciones, aplicaciones, sustituciones y cuidados.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
